@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: mlops_fastapi_app
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=0000
+      - DB_NAME=olist
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: mlops_postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 0000 
+      POSTGRES_DB: olist
+    ports:
+      - "5432:5432"

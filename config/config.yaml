@@ -1,0 +1,15 @@
+db:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "0000" 
+  database: "olist"
+
+features:
+  numerical_cols:
+    - price
+    - freight_value
+  categorical_cols: []
+
+model:
+  path: "models/final_model.pkl"
