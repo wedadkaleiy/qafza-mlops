@@ -10,7 +10,7 @@ services:
       - DB_HOST=db
       - DB_PORT=5432
       - DB_USER=postgres
-      - DB_PASSWORD=0000
+      - DB_PASSWORD=password  # <-- هنا كلمة السر التي يرسلها التطبيق
       - DB_NAME=olist
     depends_on:
       - db
@@ -20,7 +20,12 @@ services:
     container_name: mlops_postgres_db
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 0000 
+      POSTGRES_PASSWORD: password  # <-- هنا كلمة السر التي تُنشأ بها قاعدة البيانات
       POSTGRES_DB: olist
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
