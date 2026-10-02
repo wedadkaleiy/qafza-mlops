@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pydantic
+sqlalchemy
+psycopg2-binary
+prometheus-fastapi-instrumentator
+joblib
+pandas
+scikit-learn
+numpy
+pyyaml
